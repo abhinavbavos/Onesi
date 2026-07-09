@@ -595,6 +595,32 @@ section:not(.hero) {
     padding: 120px 40px;
 }
 
+#about {
+    padding-bottom: 40px;
+}
+
+#experience {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#expertise {
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+#projects {
+    padding-top: 40px;
+}
+
+#education {
+    padding-bottom: 40px;
+}
+
+#awards {
+    padding-top: 40px;
+}
+
 .section-container {
     max-width: 1400px;
     margin: 0 auto;
@@ -644,6 +670,7 @@ section:not(.hero) {
     color: var(--text-body);
     font-size: 16px;
     line-height: 1.7;
+    text-align: justify;
 }
 
 .about-stats {
@@ -697,6 +724,12 @@ section:not(.hero) {
 .expertise-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
 
@@ -1060,7 +1093,9 @@ section:not(.hero) {
     flex: 0 0 320px;
     display: flex;
     flex-direction: column;
-    position: relative;
+    position: sticky;
+    top: 100px;
+    align-self: flex-start;
     gap: 20px;
 }
 
@@ -1099,6 +1134,7 @@ section:not(.hero) {
 
 .exp-tab.active {
     border-color: var(--primary-blue);
+    border-width: 3px;
     background: #f8fafc;
     box-shadow: 0 10px 25px rgba(59, 130, 246, 0.1);
 }
@@ -1153,17 +1189,17 @@ section:not(.hero) {
 }
 
 .role-details {
-    display: none;
+    display: block;
     background: white;
     border-radius: 16px;
     padding: 40px;
     border: 1px solid var(--border-color);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
-    animation: fadeInRole 0.4s ease forwards;
+    margin-bottom: 40px;
 }
 
-.role-details.active {
-    display: block;
+.role-details:last-child {
+    margin-bottom: 0;
 }
 
 @keyframes fadeInRole {
@@ -1401,7 +1437,8 @@ section:not(.hero) {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .expertise-grid {
+    .expertise-grid,
+    .awards-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1471,7 +1508,8 @@ section:not(.hero) {
         padding: 28px 20px;
     }
 
-    .expertise-grid {
+    .expertise-grid,
+    .awards-grid {
         grid-template-columns: 1fr;
     }
 
